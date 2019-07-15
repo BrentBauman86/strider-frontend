@@ -1,12 +1,28 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateLoginForm } from '../actions/loginForm.js'
+import { login } from '../actions/currentUser.js'
 
-const Login = (props) => {
+const Login = ({ loginFormData, updateLoginForm, login }) => {
+
+    const handleInputChange = event => {
+        const { name, value } = event.target
+        const updatedFormInfo = {
+            ...loginFormData,
+            [name]: value 
+        }
+        updateLoginForm(updatedFormInfo)
+    }
+
+    const handleSubmit = event => {
+        event.preventDefault()
+        login(loginFormData)
+    }
+
     return (
-        <form onSubmit={ undefined }>
-            <input placeholder="name" value={props.name} name='name' type="text" onChange={undefined}/>
-            <input placeholder="password" value={props.password} name='password' type="text" onChange={undefined}/>
+        <form onSubmit={ login }>
+            <input placeholder="name" value={loginFormData.name} name='name' type="text" onChange={handleInputChange}/>
+            <input placeholder="password" value={loginFormData.password} name='password' type="text" onChange={handleInputChange}/>
             <input type='submit' value="log In" />
         </form>
     )
@@ -16,9 +32,8 @@ const Login = (props) => {
 
 const mapStateToProps = state => {
     return {
-        name: state.loginForm.name,
-        password: state.loginForm.password
+        loginFormData: state.loginForm 
     }
 }
 
-export default connect(mapStateToProps, { updateLoginForm })(Login) 
+export default connect(mapStateToProps, { updateLoginForm, login })(Login) 
