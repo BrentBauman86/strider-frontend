@@ -10,8 +10,8 @@ const reducer = combineReducers({
     loginReducer
 })
 
-const composeEnhancers = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose;
+const composeEnhancer = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose;
 
-const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
+const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)))
 
 export default store 

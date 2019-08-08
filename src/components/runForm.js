@@ -136,6 +136,7 @@ class runForm extends React.Component {
   render() {
     return (
       <form className="container-fluid" onSubmit={this.handleFormSubmit}>
+       {/* Name of the user */}
         <input
           inputType={"text"}
           title={"Full Name"}
@@ -144,7 +145,7 @@ class runForm extends React.Component {
           placeholder={"Enter your name"}
           handleChange={this.handleInput}
         />{" "}
-        {/* Name of the user */}
+        {/* Date of the run */}
         <input
           inputType={"number"}
           name={"Date"}
@@ -170,6 +171,7 @@ class runForm extends React.Component {
           selectedOptions={this.state.newRun.difficulty}
           handleChange={this.handleCheckBox}
         />{" "}
+       {/* Difficulty */}
         <textArea
           title={"Today's Run"}
           rows={10}
@@ -178,21 +180,20 @@ class runForm extends React.Component {
           handleChange={this.handleTextArea}
           placeholder={"How was your run?"}
         />
-        {/* Difficulty */}
+       {/*Submit */}
         <button
           action={this.handleFormSubmit}
           type={"primary"}
           title={"Submit"}
           style={buttonStyle}
         />{" "}
-        {/*Submit */}
+       {/* Clear the form */}
         <button
           action={this.handleClearForm}
           type={"secondary"}
           title={"Clear"}
           style={buttonStyle}
         />{" "}
-        {/* Clear the form */}
       </form>
     );
   }
