@@ -10,12 +10,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import  runForm  from './components/runForm.js';
 import store from './store.js'
 
-const Run = () => {
-    return (
-        <div>'yoyoyo'</div>
-    )
-}
-
 const Login = () => {
     return (
       <div>
@@ -40,7 +34,7 @@ ReactDOM.render(
     </App>
         <Router>
           <React.Fragment>
-            <Route path='/run' render={Login} />
+            <Route path='/run' render={runForm} />
             </React.Fragment>
         </Router>
 </Provider>,

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 /* Import Components */
 import { checkBox } from "../runFormComponents/checkBox.js";
@@ -22,6 +22,7 @@ class runForm extends React.Component {
       distanceOptions: ["5k", "10k", "15k"],
       difficultyOptions: ["Easy", "Medium", "Hard"]
     };
+    
     this.handleTextArea = this.handleTextArea.bind(this);
     this.handleName = this.handleName.bind(this);
     this.handleDate = this.handleDate.bind(this);
