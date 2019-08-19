@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 /* Import Components */
 import { checkBox } from "../runFormComponents/checkBox.js";
@@ -22,6 +22,7 @@ class runForm extends React.Component {
       distanceOptions: ["5k", "10k", "15k"],
       difficultyOptions: ["Easy", "Medium", "Hard"]
     };
+    
     this.handleTextArea = this.handleTextArea.bind(this);
     this.handleName = this.handleName.bind(this);
     this.handleDate = this.handleDate.bind(this);
@@ -136,6 +137,7 @@ class runForm extends React.Component {
   render() {
     return (
       <form className="container-fluid" onSubmit={this.handleFormSubmit}>
+       {/* Name of the user */}
         <input
           inputType={"text"}
           title={"Full Name"}
@@ -144,7 +146,7 @@ class runForm extends React.Component {
           placeholder={"Enter your name"}
           handleChange={this.handleInput}
         />{" "}
-        {/* Name of the user */}
+        {/* Date of the run */}
         <input
           inputType={"number"}
           name={"Date"}
@@ -170,29 +172,32 @@ class runForm extends React.Component {
           selectedOptions={this.state.newRun.difficulty}
           handleChange={this.handleCheckBox}
         />{" "}
+       {/* Difficulty */}
         <textArea
           title={"Today's Run"}
-          rows={10}
+          rows={1}
           value={this.state.newRun.comment}
           name={"comment"}
           handleChange={this.handleTextArea}
           placeholder={"How was your run?"}
         />
-        {/* Difficulty */}
+       {/*Submit */}
         <button
           action={this.handleFormSubmit}
           type={"primary"}
           title={"Submit"}
           style={buttonStyle}
-        />{" "}
-        {/*Submit */}
+        />
+        {" "}
+       {/* Clear the form */}
+       <button variant="primary">Primary</button>
+
         <button
           action={this.handleClearForm}
           type={"secondary"}
           title={"Clear"}
           style={buttonStyle}
         />{" "}
-        {/* Clear the form */}
       </form>
     );
   }
