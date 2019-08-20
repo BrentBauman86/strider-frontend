@@ -6,7 +6,7 @@ export const setCurrentUser = user => {
     }
 }
 
-export const clearCurrentUser => {
+export const clearCurrentUser = () => {
     return {
         type: "CLEAR_CURRENT_USER"
     }
@@ -27,18 +27,16 @@ export const login = credentials => {
        .then(response => response.json())
        .then(userData => dispatch(setCurrentUser(userData)))
        .catch(console.log)
-<<<<<<< HEAD
     }
 }
 
 export const logout = () => {
-    return (dispatch) => {
+    return dispatch => {
+        dispatch(clearCurrentUser())
         return fetch('http://localhost:3000/api/logout', {
             credentials: "include",
             method: "DELETE"
         })
-=======
->>>>>>> ef444268458354431a1fe9c95402c8d78d05ad92
     }
 }
 
