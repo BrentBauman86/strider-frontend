@@ -27,6 +27,7 @@ export const login = credentials => {
        .then(response => response.json())
        .then(userData => dispatch(setCurrentUser(userData)))
        .catch(console.log)
+<<<<<<< HEAD
     }
 }
 
@@ -36,6 +37,8 @@ export const logout = () => {
             credentials: "include",
             method: "DELETE"
         })
+=======
+>>>>>>> ef444268458354431a1fe9c95402c8d78d05ad92
     }
 }
 

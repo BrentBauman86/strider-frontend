@@ -187,11 +187,15 @@ class runForm extends React.Component {
           type={"primary"}
           title={"Submit"}
           style={buttonStyle}
+<<<<<<< HEAD
         />
         {" "}
        {/* Clear the form */}
        <button variant="primary">Primary</button>
         {" "}
+=======
+        />{" "}
+>>>>>>> ef444268458354431a1fe9c95402c8d78d05ad92
        {/* Clear the form */}
         <button
           action={this.handleClearForm}
