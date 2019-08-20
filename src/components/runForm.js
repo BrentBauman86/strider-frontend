@@ -191,7 +191,8 @@ class runForm extends React.Component {
         {" "}
        {/* Clear the form */}
        <button variant="primary">Primary</button>
-
+        {" "}
+       {/* Clear the form */}
         <button
           action={this.handleClearForm}
           type={"secondary"}
