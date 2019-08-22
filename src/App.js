@@ -5,6 +5,7 @@ import { runForm } from './components/runForm'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser.js'
 import  NavBar from './components/NavBar'
+import Login from './components/Login'
 
 const styles = {
   fontFamily: "sans-serif",
@@ -19,7 +20,8 @@ class App extends React.Component{
   
   render() {
     return (
-      <NavBar/>
+      <NavBar/>,
+      <Login/>
     );
   }
 }
