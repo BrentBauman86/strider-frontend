@@ -4,7 +4,7 @@ import './App.css';
 import { runForm } from './components/runForm'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser.js'
-import  NavBar from './components/NavBar'
+import  NavBar from './components/NavBar.js'
 import Login from './components/Login'
 import Logout from './components/Logout'
 
@@ -14,6 +14,28 @@ const styles = {
   textAlign: "center"
 };
 
+// class App extends React.Component{
+  
+//   componentDidMount(){
+//      this.props.getCurrentUser()
+//   }
+  
+//   render() {
+//     return (
+//         this.props.currentUser ? "welcome, {currentUser.name}" : "",
+//         this.props.currentUser ? <Logout/> : <Login/>
+//     );
+
+//       }
+//     }
+//     const mapStateToProps = ({currentUser}) => {
+//       return {
+//         currentUser  
+//       }
+// }
+
+// export default connect(mapStateToProps, { getCurrentUser })(App);
+
 class App extends React.Component{
   
   componentDidMount(){
@@ -22,10 +44,11 @@ class App extends React.Component{
   
   render() {
     return (
-      <Login/>
-      // <NavBar/>
+      <NavBar/>
     );
-  }
-}
+
+      }
+    }
+
 
 export default connect(null, { getCurrentUser })(App);

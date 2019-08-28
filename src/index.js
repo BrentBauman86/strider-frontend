@@ -10,24 +10,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import  runForm  from './components/runForm.js';
 import store from './store.js'
 
-// const Login = () => {
-//     return (
-//       <div>
-//         <form>
-//           <div>
-//             <input type="text" name="username" placeholder="Username" />
-//             <label htmlFor="username">Username</label>
-//           </div>
-//           <div>
-//             <input type="password" name="password" placeholder="Password" />
-//             <label htmlFor="password">Password</label>
-//           </div>
-//           <input type="submit" value="Login" />
-//         </form>
-//       </div>
-//     );
-//   };
-
 ReactDOM.render(
 <Provider store={ store }>
     <App>
